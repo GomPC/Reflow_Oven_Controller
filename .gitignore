@@ -1,0 +1,14 @@
+*.o
+*.d
+*.crf
+*.dep
+*.sct
+*.lnp
+*.htm
+*.axf
+*.lst
+*.map
+Lib/
+DebugConfig/
+.vscode/
+*.user
