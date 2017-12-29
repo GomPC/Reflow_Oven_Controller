@@ -4,11 +4,13 @@
 #define __MAIN_H__
 
 #include <stdio.h>
+#include <stdarg.h>
 #include <math.h>
 #include "stm32f10x_conf.h"
 #include "stm32f10x.h"
 #include "timer.h"
 #include "extio.h"
+#include "comm.h"
 
 #define STATE_STANDBY   0
 #define STATE_INIT      1
@@ -38,7 +40,9 @@ typedef struct __StatusType__
     u32 buzzerCount;
     u32 beepCount;
     u32 piBipCount;
-
+	
+	u8 monitor;
+	
     u32 time;
     u32 standbyTime;
     u32 remTime;

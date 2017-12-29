@@ -30,6 +30,8 @@ StatusType Status = {
     0, // u32 buzzerCount;
     0, // u32 beepCount;
     0, // u32 piBipCount;
+	
+	0, // u8 monitor;
 
     0, // u32 time;
     0, // u32 standbyTime;
@@ -47,8 +49,14 @@ char s[256];
 int main(void)
 {
     int i;
-    Sys_Config();
 
+    
+    Sys_Config();
+    printf("***** Bead-type Sample Prep Rev. %03d.%02d *****\r\n", SysVer.main, SysVer.sub);
+	printf(">> %04d. %02d. %02d. \r\n", SysVer.year, SysVer.mon, SysVer.date);
+
+    Delay_mSec(500);
+    
     while(1)
     {
         if( Status.msecFlag )
@@ -100,7 +108,7 @@ void Sys_Config(void)
     NVIC_Config();
     SysTimer_Config();
 
-    // Comm_Config();
+    Comm_Config();
     Buzzer_Config();
     LEDKey_Config();
 }
